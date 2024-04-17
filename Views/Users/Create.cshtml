@@ -1,0 +1,93 @@
+﻿@model InventoryManegmentSystem3.Models.User
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <h1 class="text-center">User Registration</h1>
+    <hr />
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="Create">
+                <div class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="FName" class="control-label">First Name</label>
+                    <input asp-for="FName" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="LName" class="control-label">Last Name</label>
+                    <input asp-for="LName" class="form-control" />
+                    <span asp-validation-for="LName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AttName" class="control-label">Attention Name</label>
+                    <input asp-for="AttName" class="form-control" />
+                    <span asp-validation-for="AttName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Date of Birth</label>
+                    <input type="date" class="form-control" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Gender" class="control-label">Gender</label>
+                    <select asp-for="Gender" class="form-control">
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label">Email</label>
+                    <input asp-for="Email" type="email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Password</label>
+                    <input type="password" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Tel" class="control-label">Telephone</label>
+                    <input asp-for="Tel" type="tel" class="form-control" />
+                    <span asp-validation-for="Tel" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Address" class="control-label">Address</label>
+                    <input asp-for="Address" type="text" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UserLevel" class="control-label">User Level</label>
+                    <select asp-for="UserLevel" class="form-control">
+                        <option value="">Select User Level</option>
+                        <option value="Admin">Admin</option>
+                        <option value="User">User</option>
+                    </select>
+                    <span asp-validation-for="UserLevel" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="UDate" class="control-label">Registration Date</label>
+                    <input asp-for="UDate" type="date" class="form-control" />
+                    <span asp-validation-for="UDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="text-center">
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
